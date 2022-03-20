@@ -87,4 +87,25 @@ root@df3ce47da307:/# pg_dump -U postgres test_database > /tmp/backup_bd.sql
 root@df3ce47da307:/# 
 ```
 
->для уникальности значение tittle я бы еще добавлял сведения об авторе книги
+в бэкап добавил следующие органичения
+```commandline
+-- Name: orders_1 uniq_or1; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.orders_1
+    ADD CONSTRAINT uniq_or1 UNIQUE (title);
+
+
+--
+-- Name: orders_2 uniq_or2; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.orders_2
+    ADD CONSTRAINT uniq_or2 UNIQUE (title);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
+```
